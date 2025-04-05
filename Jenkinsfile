@@ -42,7 +42,7 @@ pipeline {
 
         stage('Terraform Init') {
             steps {
-                dir('terraform') {
+                dir('terrafom') {
                     bat '''
                         C:\\terraform\\terraform.exe init
                     '''
@@ -52,7 +52,7 @@ pipeline {
 
         stage('Terraform Plan & Apply') {
             steps {
-                dir('terraform') {
+                dir('terrafom') {
                     bat '''
                         C:\\terraform\\terraform.exe plan
                         C:\\terraform\\terraform.exe apply -auto-approve
