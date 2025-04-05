@@ -63,7 +63,7 @@ pipeline {
 
         stage('Publish .NET 8 Web API') {
             steps {
-                dir('web api') {
+                dir('webapi') {
                     bat '''
                         dotnet publish -c Release -o out
                         powershell Compress-Archive -Path "out\\*" -DestinationPath "webapi.zip" -Force
@@ -76,7 +76,7 @@ pipeline {
             steps {
                 withCredentials([azureServicePrincipal(credentialsId: AZURE_CREDENTIALS_ID)]) {
                     bat '''
-                        az webapp deploy --resource-group %RESOURCE_GROUP% --name %APP_SERVICE_NAME% --src-path "%WORKSPACE%\\Webapi\\webapi.zip" --type zip
+                        az webapp deploy --resource-group %RESOURCE_GROUP% --name %APP_SERVICE_NAME% --src-path "%WORKSPACE%\\webapi\\webapi.zip" --type zip
                     '''
                 }
             }
