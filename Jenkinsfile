@@ -46,7 +46,7 @@ pipeline {
                         dotnet restore
                         dotnet build --configuration Release
                         dotnet publish -c Release -o out
-                        Compress-Archive -Path "out\\*" -DestinationPath "webapi.zip" -Force
+                        powershell Compress-Archive -Path "out\\*" -DestinationPath "webapi.zip" -Force
                     '''
                 }
             }
