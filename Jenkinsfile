@@ -8,6 +8,7 @@ pipeline {
             AZURE_CLI_PATH = 'C:/Program Files/Microsoft SDKs/Azure/CLI2/wbin'
             SYSTEM_PATH = 'C:/Windows/System32'
             TERRAFORM_PATH = 'C:\\Users\\DELL\\Downloads\\terraform_1.11.3_windows_386'
+            DOTNET_PATH = 'C:\\Program Files\\dotnet'
         }
 
         stages {
@@ -38,7 +39,7 @@ pipeline {
             stage('Publish .NET 8 Web API') {
                 steps {
                     dir('webapi') {
-                        bat 'set PATH = 'C:\\Program Files\\dotnet''
+                        bat 'set PATH = %DOTNET_PATH%;%PATH%'
                         bat 'dotnet restore'
                         bat 'dotnet build --configuration Release'
                         bat 'dotnet publish -c Release -o out'
