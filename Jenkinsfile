@@ -40,8 +40,8 @@ pipeline {
             steps {
                 dir('webapi') {
                     // Fix the path setup and use PowerShell
-                    powershell '''
-                        $env:PATH = "$env:DOTNET_PATH;$env:PATH"
+                    bat '''
+                        PATH=%DOTNET_PATH%;%PATH%
                         dotnet --version  # Diagnostic step
                         dotnet restore
                         dotnet build --configuration Release
