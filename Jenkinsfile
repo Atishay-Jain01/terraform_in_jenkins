@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        AZURE_CREDENTIALS_ID = 'az-service-princi-atishay'
+        AZURE_CREDENTIALS_ID = '71e9b87d-d066-40af-a412-c479b3326d3c'
         RESOURCE_GROUP = 'rg-040425'
         APP_SERVICE_NAME = 'webapijenkins-040425'
         GIT_REPO_URL = 'https://github.com/Atishay-Jain01/terraform_in_jenkins.git'
