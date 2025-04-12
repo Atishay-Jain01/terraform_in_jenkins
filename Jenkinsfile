@@ -6,7 +6,7 @@ pipeline {
         RESOURCE_GROUP = 'rg-040425'
         APP_SERVICE_NAME = 'webapijenkins-040425'
         AZURE_CLI_PATH = 'C:\\Program Files\\Microsoft SDKs\\Azure\\CLI2\\wbin'
-        SYSTEM_PATH = 'C:\\Windows\\System32'
+        SYSTEM_PATH = 'C:\\Windows\\System32\\cmd.exe'
         TERRAFORM_PATH = 'C:\\Users\\DELL\\Downloads\\terraform_1.11.3_windows_386'
         DOTNET_PATH = 'C:\\Program Files\\dotnet'
     }
