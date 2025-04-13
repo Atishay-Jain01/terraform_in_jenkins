@@ -93,9 +93,9 @@ pipeline {
             steps {
                 dir('terrafom') {
                     bat """
-                        set PATH=%AZURE_CLI_PATH%;%SYSTEM_PATH%;%TERRAFORM_PATH%;%PATH%
                         where cmd
-                        cmd /c terraform init
+                        set PATH=%AZURE_CLI_PATH%;%SYSTEM_PATH%;%TERRAFORM_PATH%;%PATH%
+                        "C:\\Windows\\System32\\cmd.exe" /c terraform init
                     """
                 }
             }
