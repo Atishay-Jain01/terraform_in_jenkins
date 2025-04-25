@@ -81,10 +81,15 @@ pipeline {
         AZURE_CREDENTIALS_ID = '71e9b87d-d066-40af-a412-c479b3326d3c'
         RESOURCE_GROUP = 'rg-040425'
         APP_SERVICE_NAME = 'webapijenkins-040425'
-        AZURE_CLI_PATH = 'C:\\Program Files\\Microsoft SDKs\\Azure\\CLI2\\wbin'
+
         SYSTEM_PATH = 'C:\\Windows\\System32'  // Just the directory
-        TERRAFORM_PATH = 'C:\\Users\\DELL\\Downloads\\terraform_1.11.3_windows_386'
         DOTNET_PATH = 'C:\\Program Files\\dotnet'
+        DOCKER_PATH = 'C:\\Program Files\\Docker\\Docker\\resources\\bin'
+        TERRAFORM_PATH = 'C:\\Program Files\\terraform_1.11.4_windows_amd64'
+        AZURE_CLI_PATH = 'C:\\Program Files\\Microsoft SDKs\\Azure\\CLI2\\wbin'
+        
+        PATH = "${SYSTEM_PATH};${DOTNET_PATH};${DOCKER_PATH};${TERRAFORM_PATH};${AZURE_CLI_PATH};${PATH}"
+
     }
 
     stages {
